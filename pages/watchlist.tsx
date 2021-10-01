@@ -50,4 +50,4 @@ const Watchlist: FC = () => {
   )
 }
 
-export default watchlist;
+export default Watchlist;
