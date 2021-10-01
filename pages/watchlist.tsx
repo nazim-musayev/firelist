@@ -7,10 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import { useAuth } from 'context/Auth';
-import Watchlist from 'components/cards/Watchlist';
+import WatchlistCard from 'components/cards/Watchlist';
 
 
-const watchlist: FC = () => {
+const Watchlist: FC = () => {
   const [watchlist, setWatchlist] = useState<Movie[]>([]);
   const { user } = useAuth();
 
@@ -44,7 +44,7 @@ const watchlist: FC = () => {
           </Typography>
        </Box>
       ) : (
-        <Watchlist watchlist={watchlist} />
+        <WatchlistCard watchlist={watchlist} />
       )}
     </div>
   )

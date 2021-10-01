@@ -103,7 +103,7 @@ const Login: FC = () => {
           </Box>
           <Box display="flex">
             <Box mr={1} color="text.primary">
-              Don't have an account?
+              {"Don't have an account?"}
             </Box>
             <Typography variant="body2" color="textSecondary" onClick={() => dialogDispatch(setSignUp())}>
               Sign Up

@@ -48,8 +48,8 @@ const MoviePage: FC<MovieItem> = ({movie}) => {
       </Grid>
       <Grid item container xs={12} spacing={2}>
         <Grid item xs={4}>
-          <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} width={100} height={170} layout="responsive"
-           placeholder="blur" blurDataURL={`https://image.tmdb.org/t/p/w500${poster_path}`}
+          <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} width={100} height={170} 
+           layout="responsive" placeholder="blur" blurDataURL={`https://image.tmdb.org/t/p/w500${poster_path}`}
           />
         </Grid>
         <Grid item xs={8}>

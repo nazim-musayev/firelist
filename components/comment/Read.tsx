@@ -101,7 +101,7 @@ const ReadComments: FC<Props> = ({movieId}) => {
       unsub();
     };
    
-  }, [user]);
+  }, [user, movieId]);
 
   const likeComment = httpsCallable(functions, 'likeComment');
   const unlikeComment = httpsCallable(functions, 'unlikeComment');
