@@ -105,8 +105,8 @@ const SignUp : FC = () => {
               Sign Up
             </Button>
           </Box>
-          <Box display="flex">
-            <Box mr={1} color="text.primary">
+          <Box display="flex" mb={5}>
+            <Box mr={1} color="text.primary" >
               Already have an account?
             </Box>
             <Typography variant="body2" color="textSecondary" onClick={() => dialogDispatch(setLogIn())}>

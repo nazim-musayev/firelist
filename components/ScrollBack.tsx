@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       zIndex: 2,
       position: 'fixed',
       bottom : '5vh',
-      right : '2vw',
+      right : '3.5vw',
       background: "#d49c9c",
       color: 'black',
       "&:hover, &.Mui-focusVisible": {

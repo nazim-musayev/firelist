@@ -63,15 +63,15 @@ const DeleteComment: FC<Props> = ({id}) => {
           Are you sure ?
         </DialogTitle>
         <DialogContent>
-          <DialogContentText color="primary">
+          <DialogContentText>
             This action undoable. Be sure before clicking yes.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button color="primary" onClick={() => setDialog(false)}>
+          <Button color="secondary" variant="outlined" size="small" onClick={() => setDialog(false)}>
             No
           </Button>
-          <Button color="primary" onClick={handleDelete}>
+          <Button color="secondary" variant="outlined" size="small" onClick={handleDelete}>
             Yes
           </Button>
         </DialogActions>

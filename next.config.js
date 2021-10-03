@@ -4,6 +4,10 @@ module.exports = {
 
 module.exports = {
   images : {
-      domains : ['image.tmdb.org'],
+    domains : ['image.tmdb.org'],
+    loader : 'imgix',
+    path : '',
   },
+  trailingSlash: true
 }
+

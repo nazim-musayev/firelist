@@ -10,11 +10,11 @@ import { motion } from 'framer-motion';
 
 
 const MovieGrid6: FC<MovieItem> = ({movie}) => {
-  const { title, backdrop_path, release_date } = movie;
+  const { title, backdrop_path, release_date, id } = movie;
 
   return (
     <Grid item xs={6}>
-      <NextLink href={`/movie/${title}`} passHref>
+      <NextLink href={`/movie/${id}`} passHref>
       <Link>
         <Box position="relative" overflow="hidden">
           <motion.div whileHover={{ scale : 1.05 }}>
@@ -28,7 +28,7 @@ const MovieGrid6: FC<MovieItem> = ({movie}) => {
               {release_date.slice(0,4)}
             </Typography>
             <Typography variant="subtitle2">
-              {title.slice(0, 25)}
+              {title.length > 20 ? `${title.slice(0, 18)}...` : title}
             </Typography>
           </Box>
         </Box>

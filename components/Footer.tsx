@@ -1,10 +1,10 @@
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import Link from '@material-ui/core/Link';
 import { GrTwitter, GrInstagram } from 'react-icons/gr';
 import { FaFacebookF } from 'react-icons/fa';
-import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import { FC } from 'react';
 
 
 interface IconObj {
@@ -12,7 +12,8 @@ interface IconObj {
     path : string
 };
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
+  const router = useRouter();
 
   const icons: IconObj[] = [
     {
@@ -37,12 +38,8 @@ const Footer: React.FC = () => {
         </Typography>
         <Box display="flex" justifyContent="space-between" width="35vw" my={5}>
         {icons.map( ({icon, path}) => (
-          <IconButton key={path} color="secondary">
-            <NextLink href={path}>
-              <Link>
-                {icon}  
-              </Link>
-            </NextLink>
+          <IconButton key={path} color="secondary" onClick={() => router.push(path)}>
+            {icon}  
           </IconButton>
         ))}
       </Box>

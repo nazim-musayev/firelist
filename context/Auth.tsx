@@ -23,8 +23,8 @@ export const AuthProvider : FC<Node> = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setLoading(false);
       setUser(user);
+      setLoading(false);
     });
 
     return () => unsubscribe();

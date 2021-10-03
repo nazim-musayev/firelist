@@ -101,7 +101,7 @@ const Login: FC = () => {
               Log In
             </Button>
           </Box>
-          <Box display="flex">
+          <Box display="flex" mb={5}>
             <Box mr={1} color="text.primary">
               {"Don't have an account?"}
             </Box>

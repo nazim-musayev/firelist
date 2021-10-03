@@ -43,7 +43,7 @@ const WatchlistCard: FC<Props> = ({watchlist}) => {
              blurDataURL={`https://image.tmdb.org/t/p/w500${poster_path}`}
             />
             <Box p={1} width={600} height={xs ? "35vh" : sm ? "60vh" : "70vh"}>
-              <NextLink href={`/movie/${title}`} passHref>
+              <NextLink href={`/movie/${id}`} passHref>
               <Link>
                 <Box display="flex" alignItems="center" mb={1}>
                   <Typography variant={sm ? "subtitle1" : "h6"}>

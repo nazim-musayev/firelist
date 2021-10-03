@@ -77,7 +77,18 @@ const theme = createTheme({
         height : "40px!important"
       }
     },
+    MuiDialog : {
+      paper : {
+        backgroundColor : primaryColor,
+        color : backgroundColor
+      }
     },
-})
+    MuiDialogContentText : {
+      root : {
+        color : backgroundColor
+      }
+    }
+  }
+});
 
 export default theme;

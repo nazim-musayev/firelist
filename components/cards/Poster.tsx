@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     skeleton : {
       backgroundColor : theme.palette.grey[500],
-      height : "7vh"
+      height : "6.5vh"
     }
   }),
 );
@@ -79,16 +79,10 @@ const PosterCard: FC<Movies> = ({ movies }) => {
     const unsubscribe = onSnapshot(doc(db, "users", `${user?.uid}`), (doc) => {
       const movies: Movie[] = doc.data()?.watchlist;
       setWatchlist(movies ? movies : []);
+      setSkeleton(false);
     });
 
-    const timer = setTimeout(() => {
-      setSkeleton(false)
-    }, 3000);
-    
-    return () => {
-      unsubscribe();
-      clearTimeout(timer);
-    };
+    return () => unsubscribe();
 
   }, [user]);
 
@@ -102,7 +96,7 @@ const PosterCard: FC<Movies> = ({ movies }) => {
         <Grid key={id} item xs={6} md={4} lg={3}>
           <Card className={classes.root}>
             <CardActionArea>
-              <NextLink href={`movie/${title}`}>
+              <NextLink href={`movie/${id}`}>
               <Link underline="none">
                 <CardMedia className={classes.media} title={title}
                  image={`https://image.tmdb.org/t/p/w500${poster_path}`}
@@ -123,7 +117,7 @@ const PosterCard: FC<Movies> = ({ movies }) => {
                 </CardMedia> 
                 <CardContent className={classes.content}>
                   <Typography variant="body2" color="primary">
-                    {title.length > (sm ? 15 : 20) ? (`${title.slice(0, sm ? 14 : 18)}...`) : title }
+                    {title.length > (sm ? 13 : 20) ? (`${title.slice(0, sm ? 12 : 18)}...`) : title }
                   </Typography>
                 </CardContent> 
               </Link>

@@ -11,9 +11,11 @@ const NotFound: FC = () => {
   const router = useRouter();
 
   useEffect(() => {
-      setTimeout(() => {
-          router.push('/')
-      }, 5000)
+    const timer = setTimeout(() => {
+      router.push('/');
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, [router]);
 
   return (
@@ -27,7 +29,7 @@ const NotFound: FC = () => {
               Seems that page does not exist
           </Typography> 
           <Typography variant="body2" align="center" paragraph>
-              Redirecting to <Link href="/" style={{ color : "blue"}}> Home Page</Link>...
+              Redirecting to <Link href="/" color="secondary" > Home Page</Link>...
           </Typography>
         </Box>
       </motion.div>

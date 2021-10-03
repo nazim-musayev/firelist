@@ -4,10 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Poster from 'components/cards/Poster';
 import Backdrop from 'components/cards/Backdrop';
-import SearchedMovies from 'components/SearchedMovies';
 import { GetStaticProps } from 'next';
 import { Movies } from 'interfaces';
-import { useSearchState } from 'context/Search';
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -25,28 +23,17 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: FC<Movies> = ({movies}) => {
   const sm = useMediaQuery('(max-width:767px)');
   const md = useMediaQuery('(max-width:992px)');
-  const { searchWord, searchedMovies } = useSearchState();
-  const isSearching: boolean = sm && (searchWord ? true : false);
 
   return (
-    <>
-      {isSearching && (
-        <Box height={searchedMovies.length > 2 ? "auto" : "60vh"}>
-          <SearchedMovies />
-        </Box>
-      )}
-      {!isSearching && (
-        <Box mt={5} mx={sm ? 3 : md ? 13 : 15}>
-          <Backdrop movies={movies} />
-          <Box mt={7} mb={1}>
-            <Typography variant="overline">
-              AlL Movies
-            </Typography> 
-          </Box>
-          <Poster movies={movies} />
-        </Box>
-      )}
-    </>
+    <Box mt={5} mx={sm ? 3 : md ? 13 : 15}>
+      <Backdrop movies={movies} />
+      <Box mt={7} mb={1}>
+        <Typography variant="overline">
+          All Movies
+        </Typography> 
+      </Box>
+      <Poster movies={movies} />
+    </Box>
   );
 };
 

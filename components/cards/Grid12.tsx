@@ -10,11 +10,11 @@ import { motion } from 'framer-motion';
 
 
 const GridItem12: FC<MovieItem> = ({movie}) => {
-  const { title, backdrop_path, poster_path, release_date } = movie;
+  const { title, backdrop_path, poster_path, release_date, id } = movie;
 
   return (
     <Grid item xs={12}>
-      <NextLink href={`/movie/${title}`} passHref>
+      <NextLink href={`/movie/${id}`} passHref>
       <Link>
         <Box position="relative" overflow="hidden">
           <motion.div whileHover={{ scale: 1.05 }}>
